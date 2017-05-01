@@ -43,7 +43,7 @@ export class LoginService {
 		var loggedUser = new User(user.id, user.email, user.picture.data.url);
 		localStorage.setItem('user', JSON.stringify(loggedUser));
 		this._store.dispatch(new loginActions.LogUserAction(loggedUser));
-		this._push.show(this.translate.instant('TITLE'), this.translate.instant('SELECT'), (() => alert(loggedUser.email)));
+		this._push.show(this.translate.instant('TITLE') + " " + loggedUser.email, this.translate.instant('SELECT'), (() => alert(loggedUser.email)));
 		this.router.navigate(['/main']);
 	}
 

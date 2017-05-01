@@ -6,6 +6,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+You can also test the app deployed in "http://puy.co.nf/". However, consider it's a free server, without a proper application server, so the best approach would be
+to test it locally. If you run with some environment problems (may happen as Angular 2, mostly the Cli is changing a lot), we can run it locally in my PC with Screen Sharing.
+
 ## Comments about project
 Here we will walk through this sample project in order to explain or at least introduce all the technologies
 were used, to get a better idea of the work. Based on @angular/cli starter project, I started adding
@@ -29,6 +32,11 @@ a views, services, directives, pipes, Redux stuff such as Reducers, Actions, etc
 and spread of responsabilities, making code more flexible and mantainable.
 
 We use Redux as it help us a lot managing the application state, reducing complexity and keeping full control over all the application. As Redux guys define thereselve,
-Redux provides an easy way to centralize the state of your application.
+Redux provides an easy way to centralize the state of your application. In addition, in these days, if your use functional programming (Redux, Mobx, Flux) you're cool, so I want to be cool!
+
+About the application itself. I've implemented everything, including the optional points! The login mechanism is using Facebook API in order to retreive the user data. Once the user is logged in,
+it can access to the Snail Problem, otherwise, the application will redirect the user to the login page. We protect the routes with "Angular Guards", so each route decalred has its own rules to determine
+if the request is valid or not for that client. In order to graph each result, we use Chars.js and Bootstrap Modals, so we don't have to redirect the user to another page. It's a better UX and in my opinion,
+a nicer UI is presented that way.
 
 Any further questions and comments will be well received in our next interview. I've made my best to demonstrate some of the experience I've beeing acquiring this time as a Frontend engineer, but as the task was so open, I don't know if I was able to pleased you, but I hope so. Anyway, thank you for your time :)
