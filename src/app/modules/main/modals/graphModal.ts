@@ -29,7 +29,7 @@ export class GraphicModal extends DialogComponent<GraphicModel, boolean> impleme
   title: string;
   data: {};
 
-  private options = {
+  public options = {
     responsive: true,
     maintainAspectRatio: true
   };

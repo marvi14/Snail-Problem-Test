@@ -6,23 +6,29 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Comments about project
+Here we will walk through this sample project in order to explain or at least introduce all the technologies
+were used, to get a better idea of the work. Based on @angular/cli starter project, I started adding
+all the technologies I consider important in order to develop a big application without loosing focus on the performance. This is what I've done.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+I used WebPack in order to perform the bootsraping process of the application and manage correctly
+the scripts dependencies. During the bootsrap process, we also configure some global variables to
+be accessed from anywhere in the application such as "Underscore" or "Charts.js".
 
-## Build
+In order to implement lazy-loading of the app scripts, I used Angular 2 Router, to lazy load my modules. It aids in the lazy download and registration
+of services, directives, controllers and filters just-in-time. It supports hierarchies of dependencies within these components. This is a key aspect,
+it let us develop as many modules to the app as we wish, without afecting its performance nor its loading & bootstraping times! So, thinking that our application
+can scale without limits, it's always the best approach!
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+In the App Component (or Root component), you'll find all the initial configurations of the application such as routing rules, the transaltions
+configuration to support i18n, the initial configuration of web browser push notifications (just as Slack, Whatsapp and Facebook) and all our common tools that will
+help us all over the app.
 
-## Running unit tests
+Inside the modules folder, is where the application modules are. Each module, has it's own folder with the component or components used in that module,
+a views, services, directives, pipes, Redux stuff such as Reducers, Actions, etc... This structure help us keep the MVC pattern, giving us abstraction
+and spread of responsabilities, making code more flexible and mantainable.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+We use Redux as it help us a lot managing the application state, reducing complexity and keeping full control over all the application. As Redux guys define thereselve,
+Redux provides an easy way to centralize the state of your application.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Any further questions and comments will be well received in our next interview. I've made my best to demonstrate some of the experience I've beeing acquiring this time as a Frontend engineer, but as the task was so open, I don't know if I was able to pleased you, but I hope so. Anyway, thank you for your time :)
