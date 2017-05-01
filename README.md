@@ -35,8 +35,6 @@ We use Redux as it help us a lot managing the application state, reducing comple
 Redux provides an easy way to centralize the state of your application. In addition, in these days, if your use functional programming (Redux, Mobx, Flux) you're cool, so I want to be cool!
 
 About the application itself. I've implemented everything, including the optional points! The login mechanism is using Facebook API in order to retreive the user data. Once the user is logged in,
-it can access to the Snail Problem, otherwise, the application will redirect the user to the login page. We protect the routes with "Angular Guards", so each route decalred has its own rules to determine
-if the request is valid or not for that client. In order to graph each result, we use Chars.js and Bootstrap Modals, so we don't have to redirect the user to another page. It's a better UX and in my opinion,
-a nicer UI is presented that way.
+it can access to the Snail Problem, otherwise, the application will redirect the user to the login page. We protect the routes with "Angular Guards", so each route decalred has its own rules to determine if the request is valid or not for that client. In order to graph each result, we use Chars.js and Bootstrap Modals, so we don't have to redirect the user to another page. It's a better UX and in my opinion,a nicer UI is presented that way.
 
 Any further questions and comments will be well received in our next interview. I've made my best to demonstrate some of the experience I've beeing acquiring this time as a Frontend engineer, but as the task was so open, I don't know if I was able to pleased you, but I hope so. Anyway, thank you for your time :)
