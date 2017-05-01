@@ -14,6 +14,7 @@ export class InvalidMessageDirective {
             configureValidations();
         };
 
+        //we override the default message from the HTML5 forms validation, so we can give a more accurate message to the user
         function configureValidations() {
             if (element.nativeElement.pattern) {
                 var re = new RegExp(element.nativeElement.pattern);

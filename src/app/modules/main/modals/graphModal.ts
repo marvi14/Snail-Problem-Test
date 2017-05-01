@@ -36,8 +36,6 @@ export class GraphicModal extends DialogComponent<GraphicModel, boolean> impleme
 
   constructor(dialogService: DialogService) {
     super(dialogService);
-
-    this.data;
   }
 
   confirm() {

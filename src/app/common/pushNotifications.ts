@@ -13,6 +13,7 @@ export class PushNotifications {
 		);
 	}
 
+	//In case we want to do something when the user click the push, we must implement a callback and pass it to the subscrive
 	// onNotificationShown(res, callback) {
 	// 	setTimeout(() => res.notification.close(), 5000);
 	// 	res.notification.onclick(function(){

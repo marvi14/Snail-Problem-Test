@@ -18,6 +18,7 @@ import { LoaderService } from './loader/loader.service';
 export class HttpService extends Http {
 
     //apiUrl = 'https://dingo-api.codingo.me/';
+    //We have a stack of HTTP requsets. While we have unresolved requests, we keep on showing the loader, once all are done, we hide it
     private pendingRequests: number = 0;
 
     constructor(backend: XHRBackend, defaultOptions: AngularReduxRequestOptions, private loaderService: LoaderService) {

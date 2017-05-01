@@ -10,9 +10,12 @@ import { Router } from "@angular/router";
 
 export class AppComponent {
 	constructor(private translate: TranslateService, private _push: PushNotificationsService, private router: Router) {
+		//english language set as default, however, it will try to take the browser laguage
 		translate.setDefaultLang('en');
 		let browserLang = translate.getBrowserLang();
 		translate.use(browserLang.match(/en|es/) ? browserLang : 'en');
+
+		//we set up our push notifications, so we must ask the user for permission
 		if (this._push.isSupported() && this._push.permission !== 'granted')
 			this._push.requestPermission();
 

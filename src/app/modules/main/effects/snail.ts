@@ -21,8 +21,8 @@ import { Snail } from '../models/snail.model';
 export class SnailEffects {
 	constructor(private _actions: Actions, private _snailService: SnailService) { }
 
-	//The effects for different states are singletons that 'intercept' dispatched actions that are being sent to the reducer.
-
+	//The effects for different states are singletons that 'intercept' dispatched actions that are being sent to the reducer, in order to perform an intermediate action,
+	//we call this a Middleware
 	@Effect() loadPosts = this._actions.ofType(snailActions.ActionTypes.LOAD_SNAIL).switchMap(
 		(action) => this._snailService.loadSnailResult(action.payload)
 		.map((solution) => new snailActions.LoadSnailCompleteAction(solution))

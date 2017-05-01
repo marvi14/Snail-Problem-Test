@@ -11,6 +11,8 @@ export interface State {
 	snailRequests: Array<Snail>
 };
 
+
+//our store will be initiated either with the already stored requests or a new list of them
 const initialState: State = {
 	snailRequests: JSON.parse(localStorage.getItem('snailRequests')) || new Array<Snail>()
 };

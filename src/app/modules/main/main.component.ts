@@ -22,7 +22,8 @@ export class MainComponent {
 	public distanceClimbed: number;
 
 	constructor(private _store: Store<fromRoot.State>, private dialogService: DialogService) {
-		//_store.let executes getEntities and returns its value.
+		
+		//Observable piece of Redux State, so when the Reducer returns a new piece of state, this will be reflected in the UI
 		this.snailRequests = _store.let(fromRoot.getSnailRequests);
 		this.filters = [{
 			id: 0,
@@ -39,6 +40,7 @@ export class MainComponent {
 		}];
 	}
 
+	//we dispatch a Redux action, with the parametrs sent by the user, as we already control and validate the input rules in the template, we just pass it to the dispatcher
 	resolveSnailProblem() {
 		this._store.dispatch(new snailActions.LoadSnailAction(this.snailParameters));
 		this.snailParameters = {};
@@ -46,6 +48,7 @@ export class MainComponent {
 
 	openModal(request) {
 
+		//each SnaipRequest has the data needed to be graphicated, we just need to pass it in the format that Chart.js needs it
 		let graphData = {
 			labels: request.graphData.days,
 			datasets: [

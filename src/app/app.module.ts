@@ -17,6 +17,7 @@ import { FacebookService, FacebookModule } from "ngx-facebook";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+//this loader is in charge of determine the pattern of path to the translation files
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, './assets/translations/', '.json');
 }

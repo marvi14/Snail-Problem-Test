@@ -9,7 +9,7 @@ export class SnailService {
 	constructor(private http: HttpService) { }
 
 	loadSnailResult(payload) {
-		//Inferring that the base is USD
+		//Here we simulate the call to our backend...so we provide a valid URL, an in the response, will come the data from the server
 		return this.http.get('url').map((response) => {
 			var snatilSolution = this.snail(payload.h, payload.u, payload.d, payload.f);
 			return new Snail(payload.h, payload.u, payload.d, payload.f, snatilSolution.success, snatilSolution.day, new Date(), snatilSolution.graphData);

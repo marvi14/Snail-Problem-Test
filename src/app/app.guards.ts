@@ -9,6 +9,7 @@ export class CanActivateViaAuthGuard implements CanActivate {
 
 	constructor(private _store: Store<fromRoot.State>, private router: Router) { }
 
+	//this is the guard that protects the /main path...we can have as many as we want with any business logic rule
 	canActivate() {
 		return this._store.let(fromRoot.getUser).map((user) => {
 			if (user !== null)
