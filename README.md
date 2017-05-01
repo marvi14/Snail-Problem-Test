@@ -4,10 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-You can also test the app deployed in "http://puy.co.nf/". However, consider it's a free server, without a proper application server, so the best approach would be
-to test it locally. If you run with some environment problems (may happen as Angular 2, mostly the Cli is changing a lot), we can run it locally in my PC with Screen Sharing.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.If you run with some environment problems 
+(may happen as Angular 2, mostly the Cli is changing a lot), we can run it locally in my PC with Screen Sharing.
 
 ## Comments about project
 Here we will walk through this sample project in order to explain or at least introduce all the technologies
