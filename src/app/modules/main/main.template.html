@@ -1,0 +1,84 @@
+<section>
+    <h1 style="margin-bottom: 20px;">Snail Problem Test</h1>
+
+    <form #f="ngForm" (ngSubmit)="resolveSnailProblem(f.valid)" ngNativeValidate>
+        <div class="form-group custom-form">
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="height">Height</label>
+                            <input type="text" id="height" name="height" class="form-control" placeholder="Height" [(ngModel)]="snailParameters.h" onlyNumbers
+                                required pattern="^[1-9][0-9]?$|^100$" invalidMessage="Value should be between 1 and 100"/>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="d_can_climb">Distance Can Climb</label>
+                            <input type="text" id="d_can_climb" name="d_can_climb" class="form-control" placeholder="Distance Can Climb" [(ngModel)]="snailParameters.u"
+                               onlyNumbers required pattern="^[1-9][0-9]?$|^100$" invalidMessage="Value should be between 1 and 100"
+                            />
+                        </div>
+                        <div class="col-md-3">
+                            <label for="d_slides">Distance Slides</label>
+                            <input type="text" id="d_slides" name="d_slides" class="form-control" placeholder="Distance Slides" [(ngModel)]="snailParameters.d"
+                                onlyNumbers required pattern="^[1-9][0-9]?$|^100$" invalidMessage="Value should be between 1 and 100"
+                            />
+                        </div>
+                        <div class="col-md-3">
+                            <label for="fatigue_factor">Fatigue Factor</label>
+                            <input type="text" id="fatigue_factor" name="fatigue_factor" class="form-control" placeholder="Fatigue Factor" [(ngModel)]="snailParameters.f"
+                                onlyNumbers required pattern="^[1-9][0-9]?$|^100$" invalidMessage="Value should be between 1 and 100"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-warning" type="submit" style="width:100%; margin-top:20%;">Resolve</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <select [(ngModel)]="filterOption" id="mainselection">
+        <option *ngFor="let filter of filters" [ngValue]="filter.id">{{filter.description}}</option>
+    </select>
+    <input type="number" [(ngModel)]="distanceClimbed" *ngIf="filterOption === 3" class="custom-input" placeholder="Enter a distance climbed" min="1"/>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>Height</th>
+                    <th>Distance Can Climb</th>
+                    <th>Distance Slides</th>
+                    <th>Fatigue Factor</th>
+                    <th>Result</th>
+                    <th>Request Date</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <tr *ngFor="let request of snailRequests | async | query: filterOption:distanceClimbed" (click)="openModal(request)" class="clickeable-tr">
+                    <td>{{request.height}}</td>
+                    <td>{{request.distanceCanClimb}}</td>
+                    <td>{{request.distanceSlides}}</td>
+                    <td>{{request.fatigueFactor}}</td>
+                    <td>{{(request.success ? 'Success' : 'Fail') + ' on day ' + request.days}}</td>
+                    <td>{{request.requestDate | date: 'MM/dd/yyyy - hh:mm'}}hs</td>
+                </tr>
+                <tr *ngIf="(snailRequests | async)?.length == 0">
+                    <td>
+                        No sanil problems resolved yet!
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<!-- follow me template -->
+<div class="made-with-love">
+    Made with
+    <i>♥</i> by
+    <a target="_blank" href="https://msanandrea.000webhostapp.com/">Mariano San Andrea</a>
+</div>
