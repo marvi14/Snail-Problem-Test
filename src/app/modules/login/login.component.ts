@@ -19,6 +19,9 @@ export class LoginComponent {
 			case "Facebook":
 				this._alert.showConfirmationMessage('Facebook', 'Are you sure you want to login with Facebook?', (() => this._loginService.facebookLogin()));
 				break;
+
+			case "NoAuth":
+			this._loginService.noAuthLogin()
 			default:
 				// code...
 				break;

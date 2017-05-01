@@ -47,4 +47,10 @@ export class LoginService {
 		this.router.navigate(['/main']);
 	}
 
+	noAuthLogin(){
+		var loggedUser = new User(123, 'test@test.com', 'url');
+		this._store.dispatch(new loginActions.LogUserAction(loggedUser));
+		this.router.navigate(['/main']);
+	}
+
 }
